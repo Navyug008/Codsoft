@@ -1,0 +1,142 @@
+basic calculator using CSS, HTML, and JavaScript,
+
+html code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Calculator</title>
+  <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+  <div class="calc-container">
+    <input type="text" id="calc-display" disabled />
+    <div class="calc-buttons">
+      <button data-key="7">7</button>
+      <button data-key="8">8</button>
+      <button data-key="9">9</button>
+      <button data-key="/">÷</button>
+
+      <button data-key="4">4</button>
+      <button data-key="5">5</button>
+      <button data-key="6">6</button>
+      <button data-key="*">×</button>
+
+      <button data-key="1">1</button>
+      <button data-key="2">2</button>
+      <button data-key="3">3</button>
+      <button data-key="-">−</button>
+
+      <button data-key="0">0</button>
+      <button data-key=".">.</button>
+      <button id="clear-btn">C</button>
+      <button data-key="+">+</button>
+
+      <button id="equals-btn" class="span-two">=</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+css code
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.calc-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+#calc-display {
+  width: 100%;
+  height: 50px;
+  text-align: right;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding-right: 10px;
+  background-color: #e9ecef;
+  border: 1px solid #ccc;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e2e6ea;
+}
+
+.span-two {
+  grid-column: span 2;
+  background-color: #28a745;
+  color: white;
+}
+
+#clear-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+JavaScript Code:
+
+const display = document.getElementById('calc-display');
+const buttons = document.querySelectorAll('button');
+let currentInput = '';
+let result = '';
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const key = button.getAttribute('data-key');
+
+    // Clear the display
+    if (button.id === 'clear-btn') {
+      currentInput = '';
+      result = '';
+      display.value = '';
+      return;
+    }
+
+    // Calculate result when equals button is clicked
+    if (button.id === 'equals-btn') {
+      try {
+        result = eval(currentInput);
+        display.value = result;
+        currentInput = result; // So you can continue using the result
+      } catch (error) {
+        display.value = 'Error';
+        currentInput = '';
+      }
+      return;
+    }
+
+    // Handle user input
+    currentInput += key;
+    display.value = currentInput;
+  });
+});
