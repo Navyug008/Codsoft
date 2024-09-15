@@ -1,0 +1,123 @@
+personal portfolio using CSS and HTML
+
+html code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navyug Baliyan's Portfolio</title>
+    <link rel="stylesheet" href="task2.css">
+</head>
+<body>
+    <header>
+        <h1>Navyug Baliyan</h1>
+        <p>B.Tech in Computer Science and Engineering</p>
+    </header>
+    <section id="intro">
+        <h2>About Me</h2>
+        <p>Hello! My name is Navyug Baliyan, and I am currently pursuing a Bachelor of Technology (B.Tech) degree in Computer Science and Engineering (CSE). I am passionate about technology and eager to apply my knowledge and skills to solve real-world problems. Welcome to my portfolio!</p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Reading Books</li>
+            <li>Solving Problems</li>
+            <li>Watching Movies</li>
+            <li>Analyzation</li>
+            <li>Meditation</li>
+        </ul>
+    </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li>Internship at Internshala</li>
+            <li>Internship at Codsoft</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Time Management App</li>
+            <li>Weather App</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:baliyannavyug56@gmail.com">baliyannavyug56@gmail.com</a></p>
+        <p>Phone: <a href="tel:+917037694547">7037694547</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Navyug Baliyan</p>
+    </footer>
+</body>
+</html>
+
+Css code
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e4e4e4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
